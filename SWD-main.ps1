@@ -4,12 +4,12 @@ Creates Setup Complete Files
 #>
 
 Set-ExecutionPolicy Bypass -Force
-iex (irm https://raw.githubusercontent.com/raffie-usb/REG/refs/heads/master/SWD/SWD-ap-menu.ps1)
+iex (irm https://raw.githubusercontent.com/raffie-usb/SWD/refs/heads/main/SWD-ap-menu.ps1)
 
 Write-Host -Foreground Red $GroupTag
 sleep -Seconds 3
 
-iex (irm https://raw.githubusercontent.com/raffie-usb/REG/refs/heads/master/SWD/SWD-functions.ps1)
+iex (irm https://raw.githubusercontent.com/raffie-usb/SWD/refs/heads/main/SWD-functions.ps1)
 
 #++++++++++++++++++++++++++++++
 # Functions were here !!
@@ -68,7 +68,7 @@ if (Test-HPIASupport){
     $Global:MyOSDCloud.HPBIOSUpdate = [bool]$true
 
     #Set HP BIOS Settings to what I want:
-    iex (irm https://raw.githubusercontent.com/raffie-usb/REG/refs/heads/master/SWD/SWD-manage-hpbiossettings.ps1)
+    iex (irm https://raw.githubusercontent.com/raffie-usb/SWD/refs/heads/main/SWD-manage-hpbiossettings.ps1)
     Manage-HPBiosSettings -SetSettings
 }
 #>
