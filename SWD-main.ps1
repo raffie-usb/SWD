@@ -42,12 +42,17 @@ $Global:MyOSDCloud = [ordered]@{
     Restart = [bool]$False
     RecoveryPartition = [bool]$true
     OEMActivation = [bool]$True
-    WindowsUpdate = [bool]$true
-    WindowsUpdateDrivers = [bool]$true
+    # Updates niet in SetupComplete: die laten een herstart open staan en botsen dan met de
+    # updatestap van OOBE (fout OOBEZDP). OOBE en Intune doen de updates. (2026-09-22)
+    WindowsUpdate = [bool]$false
+    WindowsUpdateDrivers = [bool]$false
     WindowsDefenderUpdate = [bool]$true
     SetTimeZone = [bool]$true
     ClearDiskConfirm = [bool]$False
-    ShutdownSetupComplete = [bool]$true
+    # Geen shutdown of restart aan het eind van SetupComplete: Windows gaat zelf door naar OOBE
+    # zodra SetupComplete klaar is. (2026-09-22)
+    ShutdownSetupComplete = [bool]$false
+    SetupCompleteNoRestart = [bool]$true
     SyncMSUpCatDriverUSB = [bool]$true
     ApplyCatalogFirmware = [bool]$true
    }
