@@ -44,8 +44,8 @@ $Global:MyOSDCloud = [ordered]@{
     OEMActivation = [bool]$True
     # Updates niet in SetupComplete: die laten een herstart open staan en botsen dan met de
     # updatestap van OOBE (fout OOBEZDP). OOBE en Intune doen de updates. (2026-09-22)
-    WindowsUpdate = [bool]$true
-    WindowsUpdateDrivers = [bool]$true
+    WindowsUpdate = [bool]$false
+    WindowsUpdateDrivers = [bool]$false
     WindowsDefenderUpdate = [bool]$true
     SetTimeZone = [bool]$true
     ClearDiskConfirm = [bool]$False
